@@ -13,13 +13,24 @@
   ],
   "remoteEnv": {
     "PATH": "${containerEnv:PATH}:${containerWorkspaceFolder}/scripts",
-    "REPO_ROOT": "${containerWorkspaceFolder}",
+    "REPO_ROOT": "${containerWorkspaceFolder}"
   },
   // make vscode user the owner & group of ephemeral volumes
   "postAttachCommand": "sudo chown -R vscode:vscode node_modules cdk/cdk.out",
   "customizations": {
     "vscode": {
-      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
+      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"],
+      "settings": {
+        "[typescript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[javascript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[json]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        }
+      }
     }
   }
 }
