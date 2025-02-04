@@ -1,5 +1,5 @@
 {
-  "name": "CDK Template",
+  "name": "aws-cdk-typescript-template",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
     "ghcr.io/devcontainers/features/node:1": {},
@@ -9,14 +9,14 @@
   "mounts": [
     // ephemeral volumes for artifacts with high disk i/o
     "source=${devcontainerId}-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume",
-    "source=${devcontainerId}-cdk-out,target=${containerWorkspaceFolder}/cdk/cdk.out,type=volume"
+    "source=${devcontainerId}-cdk-out,target=${containerWorkspaceFolder}/cdk.out,type=volume"
   ],
   "remoteEnv": {
     "PATH": "${containerEnv:PATH}:${containerWorkspaceFolder}/scripts",
     "REPO_ROOT": "${containerWorkspaceFolder}"
   },
   // make vscode user the owner & group of ephemeral volumes
-  "postAttachCommand": "sudo chown -R vscode:vscode node_modules cdk/cdk.out",
+  "postAttachCommand": "sudo chown -R vscode:vscode node_modules cdk.out",
   "customizations": {
     "vscode": {
       "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"],
